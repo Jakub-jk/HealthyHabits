@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <link rel="shortcut icon" href="img/Healthy-Habits-icon.png" type="image/png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+    <title>Healthy habits</title>
+</head>
+
+<body class="vh-100">
+    <div id="page-content" class="d-flex flex-column justify-content-center">
+        <div class="loader">
+            <div class="flex-center flex-column h-100 w-100">
+                <div class="lds-heart">
+                    <div></div>
+                </div>
+                <h2 class="my-5 mx-3 text-center">Trwa ładowanie zawartości...</h2>
+                <p style="display: none;" onclick="retry()">Naciśnij tutaj, aby spróbować ponownie</p>
+            </div>
+        </div>
+        <div id="stats">
+            <div class="stat">
+                <i class="fas fa-fw fa-heart"></i>
+                <div class="progress">
+                    <div id="health" class="progress-bar" role="progressbar"
+                        style="width: 75%; background-color: #FFADAD;"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-fw fa-brain"></i>
+                <div class="progress">
+                    <div id="mental" class="progress-bar" role="progressbar"
+                        style="width: 75%; background-color: #9BF6FF;"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-fw fa-bolt"></i>
+                <div class="progress">
+                    <div id="energy" class="progress-bar" role="progressbar"
+                        style="width: 100%; background-color: #CAFFBF;"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fas fa-fw fa-graduation-cap"></i>
+                <div class="progress">
+                    <div id="persdev" class="progress-bar" role="progressbar"
+                        style="width: 50%; background-color: #BDB2FF;"></div>
+                </div>
+            </div>
+        </div>
+        <div id="header" class="d-flex position-relative">
+            <h5 class="text-center backbtn position-absolute" onclick="onBackKeyDown()"><i
+                    class="fas fa-chevron-left"></i></h5>
+            <h3 class="text-center py-3 flex-grow-1">Dzień 1</h3>
+        </div>
+        <div id="content" class="flex-grow-1 d-flex flex-column justify-content-center">
+            <div class="dialog align-self-center mb-4">
+                <h2>Pytanie</h2>
+            </div>
+            <div id="options" class="flex-grow d-flex flex-wrap justify-content-center">
+                <button onclick="answer(this)">
+                    <p>1</p>
+                    <small class="icon-outline">
+                        <span class="mr-2 health"><i class="fas fa-heart"></i> <span class="val">5</span></span>
+                        <span class="mr-2 mental"><i class="fas fa-brain"></i> <span class="val">-1</span></span>
+                        <span class="mr-2 energy"><i class="fas fa-bolt"></i> <span class="val">0</span></span>
+                        <span class="persdev"><i class="fas fa-graduation-cap"></i> <span class="val">0</span></span>
+                    </small>
+                </button>
+                <button onclick="answer(this)">
+                    <p>2</p>
+                    <small class="icon-outline">
+                        <span class="mr-2 health"><i class="fas fa-heart"></i> <span class="val">5</span></span>
+                        <span class="mr-2 mental"><i class="fas fa-brain"></i> <span class="val">-1</span></span>
+                        <span class="mr-2 energy"><i class="fas fa-bolt"></i> <span class="val">0</span></span>
+                        <span class="persdev"><i class="fas fa-graduation-cap"></i> <span class="val">0</span></span>
+                    </small>
+                </button>
+                <button onclick="answer(this)">
+                    <p>3</p>
+                    <small class="icon-outline">
+                        <span class="mr-2 health"><i class="fas fa-heart"></i> <span class="val">5</span></span>
+                        <span class="mr-2 mental"><i class="fas fa-brain"></i> <span class="val">-1</span></span>
+                        <span class="mr-2 energy"><i class="fas fa-bolt"></i> <span class="val">0</span></span>
+                        <span class="persdev"><i class="fas fa-graduation-cap"></i> <span class="val">0</span></span>
+                    </small>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="summary" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="summaryTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center mb-0 flex-grow-1" id="summaryTitle">Podsumowanie dnia</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Bilans statystyk na dzień <span>1</span>:</p>
+                    <h5 class="icon-outline">
+                        <span class="mr-2 health"><i class="fas fa-heart"></i> <span class="val">5</span></span>
+                        <span class="mr-2 mental"><i class="fas fa-brain"></i> <span class="val">-1</span></span>
+                        <span class="mr-2 energy"><i class="fas fa-bolt"></i> <span class="val">0</span></span>
+                        <span class="persdev"><i class="fas fa-graduation-cap"></i> <span class="val">0</span></span>
+                    </h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="gameOver" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="gameOverTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center mb-0 flex-grow-1" id="gameOverTitle">Ups...</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Cóż, to nie były najlepsze wybory... Może powtórzymy ten dzień?</p>
+                </div>
+                <div class="modal-footer justify-content-around">
+                    <button class="btn btn-secondary" data-dismiss="modal" onclick="stor.setItem('end', true); navigate('index.html');">Nie, to już koniec</button>
+                    <button class="btn btn-primary" data-dismiss="modal" onclick="generateQuestions(); showQuestion();">Tak, powtórzmy!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var stor = window.localStorage;
+        var food = [];
+        var questions = [];
+        var failed = false;
+        var index = 0;
+        var day = 0;
+        var answered = false;
+
+        $(() => {
+            loadContent();
+        });
+
+        document.addEventListener("deviceready", () => {
+            document.addEventListener("backbutton", onBackKeyDown, false);
+        }, false);
+
+
+        function onBackKeyDown() {
+            navigate("index.html");
+        }
+
+        function loadContent() {
+            $.ajaxSetup({ async: false });
+            $.getJSON("data/food.json", (data) => {
+                food = data;
+            }).fail(loadFailed);
+            $.getJSON("data/questions.json", (data) => {
+                questions = data;
+            }).fail(loadFailed);
+            if (!failed) {
+                if (stor.getItem('day') === null) {
+                    stor.setItem('day', 1);
+                    stor.setItem('health', 100);
+                    stor.setItem('mental', 100);
+                    stor.setItem('energy', 75);
+                    stor.setItem('persdev', 50);
+                }
+                setBars();
+                day = stor.getItem('day');
+                $("#header h3").text("Dzień " + day);
+                if (stor.getItem('day' + day) === null)
+                    generateQuestions();
+                showQuestion();
+                $(".loader").hide();
+                $("body").addClass("navigated");
+
+            }
+            $.ajaxSetup({ async: true });
+        }
+
+        function loadFailed() {
+            failed = true;
+            $(".lds-heart").addClass("failed");
+            $(".loader h2").text("Nie udało się wczytać zawartości");
+            $(".loader p").fadeIn();
+        }
+
+        function retry() {
+            $(".loader p").hide();
+            $(".lds-heart").removeClass("failed");
+            $(".loader h2").text("Trwa ładowanie zawartości...");
+            loadContent();
+        }
+
+        function generateQuestions() {
+            var quest = [];
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "food" && x.Subtype == "breakfast"));
+            if (randomInt(0, 100) < 5)
+                quest.push(questions.getRandomUnique(quest, x => x.Type == "event" && x.Subtype == "morning"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "ride" && x.Subtype == "to"));
+            if (randomInt(0, 100) < 5)
+                quest.push(questions.getRandomUnique(quest, x => x.Type == "event" && x.Subtype == "noon"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "work"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "food" && x.Subtype == "dinner"));
+            var work = randomInt(1, 3);
+            for (let i = 0; i < work; i++)
+                quest.push(questions.getRandomUnique(quest, x => x.Type == "work"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "ride" && x.Subtype == "from"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "freetime"));
+            if (randomInt(0, 100) < 5)
+                quest.push(questions.getRandomUnique(quest, x => x.Type == "event" && x.Subtype == "afternoon"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "food" && x.Subtype == "snack"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "freetime"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "food" && x.Subtype == "supper"));
+            quest.push(questions.getRandomUnique(quest, x => x.Type == "event" && x.Subtype == "bedtime"));
+
+            var gen = [];
+            for (var q of quest) {
+                gen.push({
+                    ID: q.ID,
+                    Content: q.Content,
+                    Answer: null
+                });
+            }
+            stor.setItem('day' + day, JSON.stringify(gen));
+        }
+
+        function showQuestion() {
+            answered = false;
+            var quest = JSON.parse(stor.getItem('day' + day));
+            index = quest.findIndex(x => x.Answer === null);
+            if (index != -1) {
+                $("#content").fadeOut('fast', () => {
+                    $("#content small").removeClass("show");
+                    var q = questions.find(x => x.ID == quest[index].ID);
+                    $("#content h2").text(q.Content);
+                    if (q.Type == "food") {
+                        var btns = $("#content button");
+                        btns.show();
+                        var o1 = food.getRandom(x => x.Healthy == true && x.Type == q.Subtype);
+                        btns.eq(0).prop("data-id", o1.ID).children("p").text(o1.Name);
+                        setEffects(btns.get(0), o1);
+                        var o2 = food.getRandom(x => x.Healthy == false && x.Type == q.Subtype);
+                        btns.eq(1).prop("data-id", o2.ID).children("p").text(o2.Name);
+                        setEffects(btns.get(1), o2);
+                        var o3 = food.find(x => x.ID == 0);
+                        btns.eq(2).prop("data-id", o3.ID).children("p").text(o3.Name);
+                        setEffects(btns.get(2), o3);
+                    }
+                    else {
+                        $("#content button").each((i, elem) => {
+                            if (i < q.Options.length) {
+                                $(elem).show().prop("data-id", q.Options[i].ID).children("p").text(q.Options[i].Content);
+                                setEffects(elem, q.Options[i]);
+                            }
+                            else
+                                $(elem).hide();
+                        })
+                    }
+                    $("#content").fadeIn();
+                });
+            }
+            else {
+                var sum = {
+                    Health: 0,
+                    Mental: 0,
+                    Energy: 0,
+                    Persdev: 0
+                };
+                for (let q of quest)
+                {
+                    sum.Health += q.Answer.Health;
+                    sum.Mental += q.Answer.Mental;
+                    sum.Energy += q.Answer.Energy;
+                    sum.Persdev += q.Answer.Persdev;
+                }
+                setEffects($("#summary .modal-body"), sum);
+                $("#summary p>span").text(day);
+                $("#summary").modal('show');
+                stor.setItem('day', ++day);
+                generateQuestions();
+                setTimeout(() => {
+                    $("#header h3").fadeOut('fast').text("Dzień " + day).fadeIn();
+                    showQuestion();
+                    stor.setItem('energy', Math.min(parseInt(stor.getItem('energy')) + 75, 100));
+                    setBars();
+                    $("#summary").modal('hide');
+                }, 4000);
+            }
+        }
+
+        function answer(sender) {
+            if (answered == true)
+                return;
+            answered = true;
+            var s = $(sender);
+            $("#content small").addClass("show");
+            var quest = JSON.parse(stor.getItem('day' + day));
+            quest[index].Answer = {
+                Content: s.find("p").text(),
+                Health: parseInt(s.prop("data-health")),
+                Mental: parseInt(s.prop("data-mental")),
+                Energy: parseInt(s.prop("data-energy")),
+                Persdev: parseInt(s.prop("data-persdev"))
+            };
+            console.log(quest[index]);
+            stor.setItem('health', Math.max(Math.min(parseInt(stor.getItem('health')) + quest[index].Answer.Health, 200), 0));
+            stor.setItem('mental', Math.max(Math.min(parseInt(stor.getItem('mental')) + quest[index].Answer.Mental, 200), 0));
+            stor.setItem('energy', Math.max(Math.min(parseInt(stor.getItem('energy')) + quest[index].Answer.Energy, 100), 0));
+            stor.setItem('persdev', Math.max(Math.min(parseInt(stor.getItem('persdev')) + quest[index].Answer.Persdev, 100), 0));
+            stor.setItem('day' + day, JSON.stringify(quest));
+            setBars();
+            if (stor.getItem('health') == 0 || stor.getItem('mental') == 0 || stor.getItem('energy') == 0 || stor.getItem('persdev') == 0)
+                $("#gameOver").modal('show');
+            else
+                setTimeout(showQuestion, 4000);
+        }
+
+        function setEffects(target, item) {
+            $(target).prop("data-health", (item.Health ?? 0)).find(".health .val").text(" " + (item.Health ?? 0));
+            $(target).prop("data-mental", (item.Mental ?? 0)).find(".mental .val").text(" " + (item.Mental ?? 0));
+            $(target).prop("data-energy", (item.Energy ?? 0)).find(".energy .val").text(" " + (item.Energy ?? 0));
+            $(target).prop("data-persdev", (item.Persdev ?? 0)).find(".persdev .val").text(" " + (item.Persdev ?? 0));
+        }
+    </script>
+</body>
+
+</html>

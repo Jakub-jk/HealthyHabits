@@ -1,0 +1,410 @@
+[
+    {
+        "ID": "0",
+        "Name": "Nic",
+        "Type": "any",
+        "Healthy": false,
+        "Health": "-25",
+        "Energy": "-25"
+    },
+    {
+        "ID": "1",
+        "Name": "Baton",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "10"
+    },
+    {
+        "ID": "2",
+        "Name": "Baton energetyczny",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-15",
+        "Energy": "20"
+    },
+    {
+        "ID": "3",
+        "Name": "Frytki",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-15",
+        "Energy": "15"
+    },
+    {
+        "ID": "4",
+        "Name": "Pierogi",
+        "Type": "dinner",
+        "Healthy": false,
+        "Health": "-15",
+        "Energy": "10"
+    },
+    {
+        "ID": "5",
+        "Name": "Lizak",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "6"
+    },
+    {
+        "ID": "6",
+        "Name": "Marchewka",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "5"
+    },
+    {
+        "ID": "7",
+        "Name": "Maliny",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "15",
+        "Energy": "5"
+    },
+    {
+        "ID": "8",
+        "Name": "Lody waniliowe ",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "7"
+    },
+    {
+        "ID": "9",
+        "Name": "Jajka sadzone",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "7",
+        "Energy": "10"
+    },
+    {
+        "ID": "10",
+        "Name": "Jabłko",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "5",
+        "Energy": "5"
+    },
+    {
+        "ID": "11",
+        "Name": "Ciastka korzenne",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "15"
+    },
+    {
+        "ID": "12",
+        "Name": "Tosty z serem",
+        "Type": "breakfast",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "10"
+    },
+    {
+        "ID": "13",
+        "Name": "Płatki z mlekiem",
+        "Type": "breakfast",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "15"
+    },
+    {
+        "ID": "14",
+        "Name": "Owsianka z owocami",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "25",
+        "Energy": "5"
+    },
+    {
+        "ID": "15",
+        "Name": "Jogurt",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "5",
+        "Energy": "-5"
+    },
+    {
+        "ID": "16",
+        "Name": "Sałatka z dressingiem",
+        "Type": "dinner",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "0"
+    },
+    {
+        "ID": "17",
+        "Name": "Spaghetti Carbonara",
+        "Type": "dinner",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "10"
+    },
+    {
+        "ID": "18",
+        "Name": "Spaghetti aglio e olio",
+        "Type": "dinner",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "0"
+    },
+    {
+        "ID": "19",
+        "Name": "Makaron z krewetkami",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "0"
+    },
+    {
+        "ID": "20",
+        "Name": "Bekon",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "-15",
+        "Energy": "-10"
+    },
+    {
+        "ID": "21",
+        "Name": "Ostrygi",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "-5"
+    },
+    {
+        "ID": "22",
+        "Name": "Sernik",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-7",
+        "Energy": "10"
+    },
+    {
+        "ID": "23",
+        "Name": "Tarta jabłkowa z lodami",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "5"
+    },
+    {
+        "ID": "24",
+        "Name": "Naleśniki z syropem klonowym",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "5"
+    },
+    {
+        "ID": "25",
+        "Name": "Sałatka owocowa",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "20",
+        "Energy": "10"
+    },
+    {
+        "ID": "26",
+        "Name": "Kanapka z grillowanym kurczakiem",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "5",
+        "Energy": "-10"
+    },
+    {
+        "ID": "27",
+        "Name": "Krem z pomidorów",
+        "Type": "dinner",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "10"
+    },
+    {
+        "ID": "28",
+        "Name": "Ciasto czekoladowe",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "8"
+    },
+    {
+        "ID": "29",
+        "Name": "Tarta cytrynowa",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "5"
+    },
+    {
+        "ID": "30",
+        "Name": "Tiramisu",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "5"
+    },
+    {
+        "ID": "31",
+        "Name": "Leczo",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "10"
+    },
+    {
+        "ID": "32",
+        "Name": "Pad Thai",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "15",
+        "Energy": "-15"
+    },
+    {
+        "ID": "33",
+        "Name": "Ryż na mleku",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "14",
+        "Energy": "-5"
+    },
+    {
+        "ID": "34",
+        "Name": "Tosty z awokado",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "12"
+    },
+    {
+        "ID": "35",
+        "Name": "Kurczak teriyaki z ryżem",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "4"
+    },
+    {
+        "ID": "36",
+        "Name": "Burrito",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "4"
+    },
+    {
+        "ID": "37",
+        "Name": "Nachosy",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "5"
+    },
+    {
+        "ID": "38",
+        "Name": "Popcorn",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "5"
+    },
+    {
+        "ID": "39",
+        "Name": "Zapiekanka",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-20",
+        "Energy": "10"
+    },
+    {
+        "ID": "40",
+        "Name": "Burger wołowy",
+        "Type": "dinner",
+        "Healthy": false,
+        "Health": "-25",
+        "Energy": "15"
+    },
+    {
+        "ID": "41",
+        "Name": "Placki ziemniaczane",
+        "Type": "supper",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "4"
+    },
+    {
+        "ID": "42",
+        "Name": "Kukurydza",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "3"
+    },
+    {
+        "ID": "43",
+        "Name": "Truskawki",
+        "Type": "snack",
+        "Healthy": true,
+        "Health": "10",
+        "Energy": "5"
+    },
+    {
+        "ID": "44",
+        "Name": "Szakszuka z papryką",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "15",
+        "Energy": "-5"
+    },
+    {
+        "ID": "45",
+        "Name": "Bajgle",
+        "Type": "breakfast",
+        "Healthy": true,
+        "Health": "-10",
+        "Energy": "10"
+    },
+    {
+        "ID": "46",
+        "Name": "Gofry z cukrem pudrem",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-10",
+        "Energy": "4"
+    },
+    {
+        "ID": "47",
+        "Name": "Budyń waniliowy",
+        "Type": "snack",
+        "Healthy": false,
+        "Health": "-5",
+        "Energy": "3"
+    },
+    {
+        "ID": "48",
+        "Name": "Focaccia z oliwkami",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "15",
+        "Energy": "4"
+    },
+    {
+        "ID": "49",
+        "Name": "Pieczona marchewka",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "20",
+        "Energy": "-5"
+    },
+    {
+        "ID": "50",
+        "Name": "Pieczone ziemniaki",
+        "Type": "supper",
+        "Healthy": true,
+        "Health": "-5",
+        "Energy": "5"
+    }
+]

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="dev.c00bie.healthyhabits" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Healthy Habits</name>
+    <description>
+        Healthy Habits to gra, która wam pokaże, że zdobywanie wiedzy o zdrowym trybie życia wcale nie musi być nudne!
+    </description>
+    <author email="jakubkandula@gmail.com">
+        Jakub Kańduła
+    </author>
+    <icon src="Healthy-Habits-icon.png" />
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="BackgroundColor" value="0xfff8edeb"/>
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="StatusBarBackgroundColor" value="#f8edeb" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+</widget>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light">
+    <link rel="shortcut icon" href="img/Healthy-Habits-icon.png" type="image/png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+    <title>Healthy habits</title>
+</head>
+
+<body class="d-flex flex-column justify-content-center navigated">
+    <h1 class="display-2" id="logo"><img src="img/Listek.svg" alt="" class="my-2"><br />Healthy <br
+            class="d-lg-none" />Habits</h1>
+    <div id="menu" class="d-flex flex-wrap justify-content-center">
+        <button id="btnplay" type="button" onclick="navigate('game.html')">Graj!</button>
+        <button id="btnreset" class="text-danger" type="button" style="display: none;" onclick="clickReset()">Rozpocznij
+            od nowa</button>
+        <button type="button" onclick="$('#howto').modal('show')">Jak grać?</button>
+        <button type="button" onclick="navigate('progress.html')">Postęp</button>
+    </div>
+    <p class="text-center" style="display: none;"><a class="text-body" href="HealthyHabits.apk">Pobierz aplikację na
+            system Android</a></p>
+    <div class="modal fade" id="howto" tabindex="-1" role="dialog" aria-labelledby="howtoTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="howtoTitle">Jak grać?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="mb-3">Healthy Habits to gra, która wam pokaże, że zdobywanie wiedzy o zdrowym trybie życia wcale nie
+                        musi być nudne!</p>
+                    <p class="mb-3">Celem gry, jest przetrwanie jak największej ilości dni w naszej aplikacji, która bezlitośnie
+                        ocenia twoje wybory dotyczące zdrowego trybu życia. Po naciśnięciu przycisku &quot;Graj!&quot;
+                        ukaże nam się pierwsze z wielu pytań, dotyczące codziennych wyzwań jakie stawia przed ludźmi
+                        świat. Co zjeść na śniadanie? Czy pojechać do pracy autem czy wybrać się na prozdrowotny spacer?
+                        I czy lepsza dla naszego zdrowia jest impreza czy siłownia? Na każde z nich trzeba odpowiedzieć,
+                        wybierając z trzech opcji, a każda z nich niesie za sobą różne konsekwencje - zmianę na lepsze
+                        lub gorsze każdego z 4 pasków statystyk - zdrowia, nastroju, energii i rozwoju osobistego. Gra
+                        toczy się do tego momentu, aż któryś z nich spadnie do poziomu zera, co w praktyce oznacza, że
+                        twoje nierozważne wybory doprowadziły twój organizm do wycieńczenia.
+                    </p>
+                    <p>
+                        Ale to nie wszystko! Możesz wejść w skórę swoich znajomych grających w Healthy Habits za pomocą
+                        strony postępu - po zbliżeniu dwóch telefonów do siebie tyłami zyskujecie dostęp do swoich
+                        wyników i
+                        możliwość przejęcia rozgrywki drugiej osoby, przez co gra staje się jeszcze bardziej
+                        ekscytujaca!<br/>
+                        <small class="text-secondary" style="display: none;"><i>Wymaga grania poprzez <a href="HealthyHeroes.apk">aplikację na system Android</a></i></small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="reset" tabindex="-1" role="dialog" aria-labelledby="resetTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetTitle">Rozpocznij od nowa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Czy na pewno chcesz wykasować cały swój postęp?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" data-dismiss="modal">Nie</button>
+                    <button class="btn btn-danger" data-dismiss="modal" onclick="reset()">Tak</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (window.localStorage.getItem("day") !== null || window.localStorage.getItem("local") !== null)
+            $("#btnreset").show();
+        if (window.localStorage.getItem("local") !== null)
+            $("#btnreset").text("Zakończ udostępnioną grę");
+        if (window.localStorage.getItem("end") !== null)
+            $("#btnplay").prop('disabled', true);
+
+        document.addEventListener('deviceready', () => {
+            if (cordova.platformId == "browser")
+                $("body > p, #howto small").show();
+        }, false);
+
+        function clickReset() {
+            if (window.localStorage.getItem("local") !== null) {
+                var local = JSON.parse(window.localStorage.getItem("local"));
+                window.localStorage.clear();
+                for (let key in local)
+                    window.localStorage.setItem(key, local[key]);
+                navigate('index.html');
+            }
+            else
+                $('#reset').modal('show')
+        }
+
+        function reset() {
+            window.localStorage.clear();
+            $("#menu .text-danger").hide();
+            navigate('game.html')
+        }
+    </script>
+</body>
+
+</html>

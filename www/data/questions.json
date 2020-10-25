@@ -1,0 +1,515 @@
+[
+    {
+        "ID": 1,
+        "Content": "Spotkałeś bezdomnego w drodze do pracy proszącego o datki",
+        "Type": "event",
+        "Subtype": "noon",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Daję pieniądze",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Kupuję jedzenie",
+                "Health": 0,
+                "Energy": -5,
+                "Persdev": 0,
+                "Mental": 10
+            },
+            {
+                "ID": 3,
+                "Content": "Przechodzę obojętnie",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": -5
+            }
+        ]
+    },
+    {
+        "ID": 2,
+        "Content": "Orientujesz się, że wstałeś dziś później, niż zwykle, i spóźnisz się do pracy. Co robisz?",
+        "Type": "event",
+        "Subtype": "morning",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Biorę szybki prysznic i wychodzę",
+                "Health": 5,
+                "Energy": -5,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 2,
+                "Content": "Ubieram byle co i wybiegam z domu",
+                "Health": -5,
+                "Energy": -5,
+                "Persdev": 0,
+                "Mental": -5
+            },
+            {
+                "ID": 3,
+                "Content": "Dzwonię do przełożonego, że się rozchorowałem",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": -10
+            }
+        ]
+    },
+    {
+        "ID": 3,
+        "Content": "Koleżanka w pracy prosi cię, abyś zajął się jej psem, gdy wyjedzie w delegację",
+        "Type": "work",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zgadzam się jej pomóc",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Otwarcie mówię, że mam inne plany",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 3,
+                "Content": "Kłamię, że mam alergię i nie mogę",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": -5
+            }
+        ]
+    },
+    {
+        "ID": 4,
+        "Content": "Szef proponuje ci awans, jednak wiąże się on z większą ilością pracy",
+        "Type": "work",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zgadzam się",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 5,
+                "Mental": 10
+            },
+            {
+                "ID": 2,
+                "Content": "Odmawiam",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": -2
+            }
+        ]
+    },
+    {
+        "ID": 5,
+        "Content": "Jesteś już po pracy. Jak wrócisz do domu?",
+        "Type": "ride",
+        "Subtype": "from",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Wracam autobusem",
+                "Health": 0,
+                "Energy": -2,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 2,
+                "Content": "Wracam pieszo",
+                "Health": 5,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            }
+        ]
+    },
+    {
+        "ID": 6,
+        "Content": "Czas wyjść z domu. Jak dostaniesz się do pracy?",
+        "Type": "ride",
+        "Subtype": "to",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Jadę autobusem",
+                "Health": 0,
+                "Energy": -2,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 2,
+                "Content": "Idę pieszo",
+                "Health": 5,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            }
+        ]
+    },
+    {
+        "ID": 7,
+        "Content": "Masz chwilę dla siebie. Jak ją wykorzystasz?",
+        "Type": "freetime",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Pójdę na spacer",
+                "Health": 5,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Siedzę przed telewizorem",
+                "Health": -5,
+                "Energy": 0,
+                "Persdev": -5,
+                "Mental": 0
+            },
+            {
+                "ID": 3,
+                "Content": "Rozwiązuję krzyżówkę",
+                "Health": 0,
+                "Energy": -5,
+                "Persdev": 5,
+                "Mental": 5
+            }
+        ]
+    },
+    {
+        "ID": 8,
+        "Content": "Nie masz ochoty siedzieć dziś w domu. Gdzie idziesz?",
+        "Type": "freetime",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Pójdę na siłownię",
+                "Health": 15,
+                "Energy": -20,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Zobaczę, co grają w teatrze",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 10,
+                "Mental": 5
+            },
+            {
+                "ID": 3,
+                "Content": "Idę na imprezę",
+                "Health": -10,
+                "Energy": -15,
+                "Persdev": 0,
+                "Mental": 5
+            }
+        ]
+    },
+    {
+        "ID": 9,
+        "Content": "Jesteś na spotkaniu rodzinnym, jednak zachowanie twojej ciotki pozostawia wiele do życzenia. Co zrobisz?",
+        "Type": "event",
+        "Subtype": "afternoon",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zwrócę grzecznie uwagę",
+                "Health": 0,
+                "Energy": -2,
+                "Persdev": 5,
+                "Mental": 10
+            },
+            {
+                "ID": 2,
+                "Content": "Skłamię, że muszę nagle wyjść",
+                "Health": 0,
+                "Energy": -5,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 3,
+                "Content": "Zignoruję",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": -5
+            }
+        ]
+    },
+    {
+        "ID": 10,
+        "Content": "Jest już późno. Jak przygotujesz się do snu?",
+        "Type": "event",
+        "Subtype": "bedtime",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Wezmę szybki prysznic",
+                "Health": 0,
+                "Energy": -2,
+                "Persdev": 5,
+                "Mental": 10
+            },
+            {
+                "ID": 2,
+                "Content": "Padam z nóg, idę prosto do łóżka",
+                "Health": 5,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 3,
+                "Content": "Zaparzę kawę i obejrzę film",
+                "Health": -15,
+                "Energy": -25,
+                "Persdev": 0,
+                "Mental": -5
+            }
+        ]
+    },
+    {
+        "ID": 11,
+        "Content": "Co zjesz na śniadanie?",
+        "Type": "food",
+        "Subtype": "breakfast"
+    },
+    {
+        "ID": 12,
+        "Content": "Czas na obiad! Na co masz ochotę?",
+        "Type": "food",
+        "Subtype": "dinner"
+    },
+    {
+        "ID": 13,
+        "Content": "Czujesz, że nieco zgłodniałeś. Może jakaś przekąska?",
+        "Type": "food",
+        "Subtype": "snack"
+    },
+    {
+        "ID": 14,
+        "Content": "Co chcesz zjeść na kolację?",
+        "Type": "food",
+        "Subtype": "supper"
+    },
+    {
+        "ID": 15,
+        "Content": "Kolega z pracy przypisał sobie twoje zasługi. Co z tym zrobisz?",
+        "Type": "work",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zgłaszam sprawę przełożonemu",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 10,
+                "Mental": 0
+            },
+            {
+                "ID": 2,
+                "Content": "Próbuję z nim porozmawiać",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": -5
+            },
+            {
+                "ID": 3,
+                "Content": "Udaję, że nic się nie stało",
+                "Health": 0,
+                "Energy": 0,
+                "Persdev": -5,
+                "Mental": -10
+            }
+        ]
+    },
+    {
+        "ID": 16,
+        "Content": "Automat z przekąskami popsuł się. Co teraz?",
+        "Type": "work",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Idę do pobliskiej kawiarni",
+                "Health": 5,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Kopię w automat",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": -5
+            },
+            {
+                "ID": 3,
+                "Content": "Zamawiam kebaba",
+                "Health": -10,
+                "Energy": 10,
+                "Persdev": 0,
+                "Mental": 0
+            }
+        ]
+    },
+    {
+        "ID": 17,
+        "Content": "Od pracy przy komputerze bolą cię już oczy. Co zrobisz?",
+        "Type": "work",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zrobię przerwę",
+                "Health": 10,
+                "Energy": 5,
+                "Persdev": -5,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Dokończę projekt",
+                "Health": -15,
+                "Energy": -20,
+                "Persdev": 10,
+                "Mental": -5
+            },
+            {
+                "ID": 3,
+                "Content": "Zmniejszam jasność monitora",
+                "Health": -5,
+                "Energy": -5,
+                "Persdev": 5,
+                "Mental": -5
+            }
+        ]
+    },
+    {
+        "ID": 18,
+        "Content": "Czujesz, że zamykają ci się już oczy...",
+        "Type": "event",
+        "Subtype": "bedtime",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Szybko przygotuję się do spania",
+                "Health": 0,
+                "Energy": -2,
+                "Persdev": 5,
+                "Mental": 10
+            },
+            {
+                "ID": 2,
+                "Content": "Idę prosto do łóżka",
+                "Health": 5,
+                "Energy": 0,
+                "Persdev": 0,
+                "Mental": 0
+            },
+            {
+                "ID": 3,
+                "Content": "Znajomy wysłał mi śmieszny filmik, obejrzę go jeszcze",
+                "Health": -15,
+                "Energy": -25,
+                "Persdev": 0,
+                "Mental": 5
+            }
+        ]
+    },
+    {
+        "ID": 19,
+        "Content": "Mówią, że śniadanie to najważniejszy posiłek. Co zatem zjesz?",
+        "Type": "food",
+        "Subtype": "breakfast"
+    },
+    {
+        "ID": 20,
+        "Content": "Masz ochotę coś przegryźć. Co to będzie?",
+        "Type": "food",
+        "Subtype": "snack"
+    },
+    {
+        "ID": 21,
+        "Content": "Co dziś na kolację?",
+        "Type": "food",
+        "Subtype": "supper"
+    },
+    {
+        "ID": 22,
+        "Content": "W twojej ulubionej kurtce pękł szew. Co teraz?",
+        "Type": "freetime",
+        "Subtype": "",
+        "Options":
+        [
+            {
+                "ID": 1,
+                "Content": "Zamówię nową przez internet",
+                "Health": 0,
+                "Energy": -5,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 2,
+                "Content": "Pójdę na zakupy",
+                "Health": 5,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 5
+            },
+            {
+                "ID": 3,
+                "Content": "Oddam do krawca, nie chcę innej!",
+                "Health": 0,
+                "Energy": -10,
+                "Persdev": 0,
+                "Mental": 10
+            }
+        ]
+    }
+]
